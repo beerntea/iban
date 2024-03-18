@@ -23,7 +23,10 @@ class IBAN {
   const BANK_ACCOUNT_NUMBER_OFFSET      = 8;
   const BANK_ACCOUNT_NUMBER_LENGTH      = 10;
 
-  /** Country code to size, regex format for each country that supports IBAN */
+  /**
+   * Country code to size, regex format for each country that supports IBAN
+   * @var array<string, array<int,int|string>>
+   */
   public static array $ibanFormatMap = [
     'AA' => [12, '^[A-Z0-9]{12}$'],
     'AD' => [20, '^[0-9]{4}[0-9]{4}[A-Z0-9]{12}$'],
@@ -144,7 +147,7 @@ class IBAN {
     } elseif (!$this->isChecksumValid()) {
       $error = 'IBAN checksum is invalid';
     } else {
-      $error = '';
+      $error = null;
       return true;
     }
 
@@ -191,7 +194,7 @@ class IBAN {
   /** Validate IBAN length boundaries */
   private function isLengthValid(): bool {
     $countryCode = $this->getCountryCode();
-    $validLength = static::COUNTRY_CODE_LENGTH + static::CHECKSUM_LENGTH + static::$ibanFormatMap[$countryCode][0];
+    $validLength = static::COUNTRY_CODE_LENGTH + static::CHECKSUM_LENGTH + (int)static::$ibanFormatMap[$countryCode][0];
 
     return strlen($this->iban) === $validLength;
   }
@@ -251,6 +254,6 @@ class IBAN {
 
   /** Normalize IBAN by removing non-relevant characters and proper casing */
   private function normalize(string $iban): string {
-    return preg_replace('/[^a-z0-9]+/i', '', trim(strtoupper($iban)));
+    return (string)preg_replace('/[^a-z0-9]+/i', '', trim(strtoupper($iban)));
   }
 }

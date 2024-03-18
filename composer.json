@@ -16,7 +16,8 @@
   },
   "require-dev": {
     "phpunit/phpunit": "^9",
-    "squizlabs/php_codesniffer": "^2.3"
+    "phpstan/phpstan": "^1.10",
+    "phpstan/phpstan-strict-rules": "^1.5"
   },
   "suggest": {
     "ext-bcmath": "Because this library makes use of bcmod function, bcmath extension is recommended for performance.",

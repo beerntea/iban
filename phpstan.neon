@@ -1,0 +1,8 @@
+parameters:
+  phpVersion: 80030
+  paths:
+    - src
+    - tests
+  level: 9
+includes:
+	- phar://phpstan.phar/conf/bleedingEdge.neon
