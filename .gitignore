@@ -3,5 +3,4 @@
 coverage
 vendor
 composer.phar
-phpunit.xml
 report.xml
