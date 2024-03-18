@@ -1,6 +1,4 @@
-.idea/
+.phpunit.result.cache
 vendor
-composer.lock
 composer.phar
 phpunit.xml
-test.php

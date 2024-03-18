@@ -1,30 +1,22 @@
 {
-  "name": "cmpayments/iban",
+  "name": "beerntea/iban",
   "type": "library",
   "description": "IBAN utility library",
   "keywords": [
     "iban",
     "validation"
   ],
-  "homepage": "http://github.com/cmpayments/iban",
+  "homepage": "http://github.com/beerntea/iban",
   "license": "MIT",
-  "authors": [
-    {
-      "name": "Bas Peters",
-      "email": "bp@cm.nl",
-      "homepage": "https://github.com/baspeters"
-    }
-  ],
   "support": {
-    "issues": "https://github.com/cmpayments/iban/issues"
+    "issues": "https://github.com/beerntea/iban/issues"
   },
   "require": {
-    "php": ">=5.5"
+    "php": ">=8.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^4.7|>=5.0 <5.4",
-    "squizlabs/php_codesniffer": "^2.3",
-    "jakub-onderka/php-parallel-lint": "^0.9.0"
+    "phpunit/phpunit": "^9",
+    "squizlabs/php_codesniffer": "^2.3"
   },
   "suggest": {
     "ext-bcmath": "Because this library makes use of bcmod function, bcmath extension is recommended for performance.",
@@ -32,7 +24,7 @@
   },
   "autoload": {
     "psr-4": {
-      "CMPayments\\": "src/lib/"
+      "Beerntea\\": "src/lib/"
     }
   }
 }
